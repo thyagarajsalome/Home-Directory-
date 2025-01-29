@@ -172,7 +172,7 @@ const directoryData = [
 function createCard(data) {
   return `
           <div class="card" data-tags="${data.tags.join(",")}">
-              <img src="${data.image}" alt="${data.title}" class="card-image">
+            
               <div class="card-content">
                   <h2 class="card-title">${data.title}</h2>
                   <div class="card-tags">
@@ -196,12 +196,10 @@ function createCard(data) {
 function renderCards(filter = "all") {
   const container = document.getElementById("cards-container");
   container.innerHTML = "";
-
   const filteredData =
     filter === "all"
       ? directoryData
       : directoryData.filter((item) => item.tags.includes(filter));
-
   filteredData.forEach((data) => {
     container.innerHTML += createCard(data);
   });

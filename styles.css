@@ -58,8 +58,9 @@ p {
 }
 
 /* Add this media query for responsive navigation */
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   .navbar {
+    display: none;
     flex-direction: column;
     padding: 1rem;
   }
