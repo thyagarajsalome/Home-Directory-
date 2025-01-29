@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Design English</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Home Design & Improvement Directory</h1>
+      <p>Your one-stop resource for all home improvement needs</p>
+    </header>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="search"
+        placeholder="Search for brands, products, or categories..."
+      />
+    </div>
+
+    <div class="categories">
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="paint">Paint</button>
+      <button class="category-btn" data-category="flooring">Flooring</button>
+      <button class="category-btn" data-category="furniture">Furniture</button>
+      <button class="category-btn" data-category="blinds">Blinds</button>
+      <button class="category-btn" data-category="renovation">
+        Renovation
+      </button>
+    </div>
+
+    <div class="cards-container" id="cards-container">
+      <!-- Cards will be dynamically inserted here -->
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
