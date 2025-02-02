@@ -180,7 +180,9 @@ const directoryData = [
       "Cabinet",
       "Exterior",
     ],
+
     link: "./visualizer.html",
+    location: "Website",
     rating: 4.8,
   },
 ];
