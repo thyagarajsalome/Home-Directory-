@@ -167,24 +167,6 @@ const directoryData = [
     location: "Nationwide",
     rating: 4.6,
   },
-  {
-    title: "Visualizer",
-    description:
-      "Paint color visualizer tool that allows you to experiment with different color schemes and combinations.",
-    image: "/api/placeholder/300/200",
-    tags: [
-      "Living Room",
-      "Bedroom",
-      "Kitchen",
-      "Bathroom",
-      "Cabinet",
-      "Exterior",
-    ],
-
-    link: "./visualizer.html",
-    location: "Website",
-    rating: 4.8,
-  },
 ];
 
 function createCard(data) {
