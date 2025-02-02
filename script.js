@@ -168,12 +168,19 @@ const directoryData = [
     rating: 4.6,
   },
   {
-    title: "Paint Visualizer",
+    title: "Visualizer",
     description:
       "Paint color visualizer tool that allows you to experiment with different color schemes and combinations.",
     image: "/api/placeholder/300/200",
-    tags: ["Living Room", "Bedroom", "Kitchen", "Bathroom"],
-    link: "Website",
+    tags: [
+      "Living Room",
+      "Bedroom",
+      "Kitchen",
+      "Bathroom",
+      "Cabinet",
+      "Exterior",
+    ],
+    link: "./visualizer.html",
     rating: 4.8,
   },
 ];
