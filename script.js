@@ -48,12 +48,12 @@ const directoryData = [
     rating: 4.5,
   },
   {
-    title: "Sherwin-Williams",
+    title: "Living room",
     description:
-      "Premium paints and coatings provider with color matching and consultation services.",
+      "Choose your perfect paint color and visualize the results before painting",
     image: "/api/placeholder/300/200",
     tags: ["paint", "supplies"],
-    link: "https://www.sherwin-williams.com",
+    link: "/living.html",
     location: "Nationwide",
     rating: 4.7,
   },
@@ -117,16 +117,7 @@ const directoryData = [
     location: "Nationwide",
     rating: 4.6,
   },
-  {
-    title: "Benjamin Moore",
-    description:
-      "High-quality paint manufacturer known for their innovative color technology and premium finishes.",
-    image: "/api/placeholder/300/200",
-    tags: ["paint", "supplies"],
-    link: "https://www.benjaminmoore.com",
-    location: "Nationwide",
-    rating: 4.8,
-  },
+
   {
     title: "Hunter Douglas",
     description:
