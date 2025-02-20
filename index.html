@@ -1,212 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="google-site-verification" content="j0tDFreq7BZOn79uEWGW5K_70WrkdIr8GCnJRcC57MA" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Home Design English</title>
-    <meta name="title" content="Home Design English - Your Ultimate Home Improvement & Interior Design Resource">
-    <meta name="description" content="Discover top home improvement brands, interior design ideas, renovation tips, and home decor inspiration. Find paint, flooring, furniture, and blinds all in one place.">
-    <meta name="keywords" content="home design, interior design, home improvement, home renovation, home decor, paint brands, flooring solutions, furniture design, window blinds, home remodeling, design inspiration, interior decoration, home makeover, modern home design, sustainable home design">
-        <meta name="language" content="English">
-    <meta name="author" content="Home Design English">
-    <meta name="revisit-after" content="7 days">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://homedesignenglish.com/">
-    <meta property="og:title" content="Home Design English - Your Ultimate Home Improvement Resource">
-    <meta property="og:description" content="Discover top home improvement brands, interior design ideas, renovation tips, and home decor inspiration. Find paint, flooring, furniture, and blinds all in one place.">
-    <meta property="og:image" content="https://homedesignenglish.com/path-to-your-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://homedesignenglish.com/">
-    <meta property="twitter:title" content="Home Design English - Your Ultimate Home Improvement Resource">
-    <meta property="twitter:description" content="Discover top home improvement brands, interior design ideas, renovation tips, and home decor inspiration. Find paint, flooring, furniture, and blinds all in one place.">
-    <meta property="twitter:image" content="https://homedesignenglish.com/path-to-your-image.jpg">
-
-    <!-- Canonical URL -->
+    <!-- SEO & Social Meta Tags -->
+    <meta
+      name="description"
+      content="HDE offers cutting-edge visualization tools for home design. Explore our interactive paint and flooring visualizations to transform your living spaces."
+    />
+    <meta
+      name="keywords"
+      content="home design, visualization tools, paint visualization, flooring visualization, living room design, bedroom design, kitchen design, exterior design, interior design"
+    />
+    <meta name="author" content="HDE" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://homedesignenglish.com/" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./styles.css" />
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Home Design English",
-      "url": "https://homedesignenglish.com",
-      "description": "Your ultimate resource for home improvement and interior design inspiration.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://homedesignenglish.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
+
+    <meta property="og:title" content="HDE - Home Design Visualization Tools" />
+    <meta
+      property="og:description"
+      content="Experience innovative home design with HDE's visualization tools. Try our paint and flooring visualizations to reimagine your space."
+    />
+    <meta property="og:type" content="https://homedesignenglish.com/" />
+    <meta property="og:url" content="https://homedesignenglish.com/" />
+    <meta property="og:image" content="https://homedesignenglish.com/" />
+
+    <title>HDE - Home Design Visualization</title>
+
+    <!-- Inline Critical CSS for Fast Loading and Smooth Scrolling -->
+    <style>
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
       }
-    }
-    </script>
-</head>
+
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Navbar */
+      nav {
+        background-color: #fff;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .navbar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+      }
+      .nav-logo svg {
+        margin-right: 8px;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+      .nav-menu {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .nav-item {
+        position: relative;
+        margin-left: 20px;
+        margin-bottom: 5px;
+      }
+      .nav-item a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 12px;
+        display: block;
+      }
+      .nav-item a:hover {
+        background-color: #e9ecef;
+        border-radius: 4px;
+      }
+      /* Dropdown Menu for Visualization Tools in Nav */
+      .dropdown {
+        cursor: pointer;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        min-width: 220px;
+        z-index: 1000;
+      }
+      .dropdown-content a {
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        display: block;
+      }
+      .dropdown-content a:hover {
+        background-color: #e9ecef;
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #37c4c2, #5068b8);
+        color: #fff;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      .hero p {
+        font-size: 1.1em;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Section Styling */
+      section {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 10px;
+      }
+      section p {
+        margin-bottom: 15px;
+      }
+
+      /* Card Container (Tools Section) */
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .card {
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+      .card a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+      }
+      .card-content {
+        padding: 15px;
+      }
+      .card-title {
+        font-size: 1.25em;
+        margin-bottom: 10px;
+      }
+      .card-description {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+      }
+      .card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .card-tag {
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+      }
+      .card-tag.paint {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+      .card-tag.flooring {
+        background-color: #d1e7dd;
+        color: #0f5132;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #fff;
+        border-top: 1px solid #e0e0e0;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+      footer a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive: Mobile Menu */
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+        .nav-menu {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+        .nav-item {
+          margin-left: 0;
+          width: 100%;
+        }
+        /* Make dropdown menus full width on mobile */
+        .dropdown-content {
+          position: relative;
+          top: 0;
+          left: 0;
+          border: none;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
   <body>
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-        <li><a href="#policy" class="nav-link">Policy</a></li>
-        <li><a href="#disclaimer" class="nav-link">Disclaimer</a></li>
-      </ul>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="navbar-container">
+        <div class="nav-logo">
+          <!-- Custom SVG Logo for HDE -->
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="2"
+              y="2"
+              width="26"
+              height="26"
+              stroke="#333"
+              stroke-width="2"
+              fill="none"
+            />
+            <text x="15" y="21" font-size="12" text-anchor="middle" fill="#333">
+              H
+            </text>
+          </svg>
+          HDE
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menuToggle">
+          <span class="hamburger">&#9776;</span>
+          <span class="close-icon" style="display: none">&times;</span>
+        </button>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home">Home</a></li>
+          <li class="nav-item"><a href="#about">About</a></li>
+          <!-- Visualization Tools Dropdown in Nav -->
+          <li class="nav-item dropdown" id="toolsDropdown">
+            <a href="javascript:void(0)">Visualization Tools &#9662;</a>
+            <div class="dropdown-content" id="dropdownContent">
+              <a href="./living.html" target="_blank"
+                >Living Room</a
+              >
+              <!-- <a href="./paint-bedroom.html" target="_blank"
+                >Bedroom Visualization</a
+              > -->
+              <a href="./kitchen.html" target="_blank"
+                >Kitchen </a
+              >
+              <!-- <a href="./paint-exterior.html" target="_blank"
+                >Exterior Visualization</a
+              > -->
+              <!-- <a href="./floor-visualization.html" target="_blank"
+                >Floor Visualization</a
+              > -->
+              <!-- <a href="./wall-visualization.html" target="_blank"
+                >Wall Visualization</a
+              > -->
+            </div>
+          </li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+          <li class="nav-item"><a href="#faq">FAQ</a></li>
+          <li class="nav-item"><a href="#policy">Policy</a></li>
+          <li class="nav-item"><a href="#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <section id="home">
-      <header>
-        <h1>Home Design English</h1>
-        <p>Your one-stop resource for all home improvement needs</p>
-      </header>
+    <!-- Home / Hero Section -->
+    <section id="home" class="hero">
+      <h1>Welcome to HDE</h1>
+      <p>
+        Transform your living spaces with our state‑of‑the‑art visualization
+        tools for paint and flooring. Experience design like never before.
+      </p>
+    </section>
 
-      <div class="search-container">
-        <input
-          type="text"
-          id="search"
-          placeholder="Search for brands, products, or categories..."
-        />
-      </div>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About HDE</h2>
+      <p>
+        HDE is your premier platform for home design visualization. Our
+        innovative tools allow you to experiment with paint colors and flooring
+        options in a variety of settings, including living rooms, bedrooms,
+        kitchens, exteriors, and more.
+      </p>
+      <p>
+        Our mission is to empower you to envision and create your ideal space
+        with interactive and user‑friendly visualization tools.
+      </p>
+    </section>
 
-      <div class="categories">
-        <button class="category-btn active" data-category="all">All</button>
-        <button class="category-btn" data-category="paint">Paint</button>
-        <button class="category-btn" data-category="flooring">Flooring</button>
-        <button class="category-btn" data-category="furniture">
-          Furniture
-        </button>
-        <button class="category-btn" data-category="blinds">Blinds</button>
-        <button class="category-btn" data-category="renovation">
-          Renovation
-        </button>
-      </div>
-
-      <div class="cards-container" id="cards-container">
-        <!-- Cards will be dynamically inserted here -->
+    <!-- Tools Section (Cards) -->
+    <section id="tools">
+      <h2>Our Visualization Tools</h2>
+      <div class="card-container">
+        <!-- Card 1: Living Room Visualization -->
+        <div class="card">
+          <a href="./living.html" target="_blank">
+            <div class="card-content">
+              <h3 class="card-title">Living Room Visualization</h3>
+              <p class="card-description">
+                Preview and experiment with vibrant paint options to transform
+                your living room.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag paint">Paint</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Card 2: Bedroom Visualization -->
+        <div class="card">
+          <!-- <a href="./paint-bedroom.html" target="_blank"> -->
+            <div class="card-content">
+              <h3 class="card-title">Bedroom Visualization</h3>
+              <p class="card-description">
+                Design your perfect bedroom with our realistic paint
+                visualization tool. Coming soon...
+              </p>
+              <div class="card-tags">
+                <span class="card-tag paint">Paint</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Card 3: Kitchen Visualization -->
+        <div class="card">
+          <a href="./kitchen.html" target="_blank">
+            <div class="card-content">
+              <h3 class="card-title">Kitchen Visualization</h3>
+              <p class="card-description">
+                Explore innovative color schemes and finishes for your kitchen.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag paint">Paint</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Card 4: Exterior Visualization -->
+        <div class="card">
+          <!-- <a href="./paint-exterior.html" target="_blank"> -->
+            <div class="card-content">
+              <h3 class="card-title">Exterior Visualization</h3>
+              <p class="card-description">
+                Visualize exterior paint choices to enhance your home’s curb
+                appeal. Coming soon ...
+              </p>
+              <div class="card-tags">
+                <span class="card-tag paint">Paint</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Card 5: Floor Visualization -->
+        <div class="card">
+          <!-- <a href="./floor-visualization.html" target="_blank"> -->
+            <div class="card-content">
+              <h3 class="card-title">Floor Visualization</h3>
+              <p class="card-description">
+                Experiment with various flooring options to elevate your
+                interior design. Coming soon...
+              </p>
+              <div class="card-tags">
+                <span class="card-tag flooring">Flooring</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Card 6: Wall Visualization -->
+        <div class="card">
+          <!-- <a href="./wall-visualization.html" target="_blank"> -->
+            <div class="card-content">
+              <h3 class="card-title">Wall Visualization</h3>
+              <p class="card-description">
+                Explore wall textures and finishes to complete your home
+                makeover. Coming soon...
+              </p>
+              <div class="card-tags">
+                <span class="card-tag flooring">Flooring</span>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="content-section">
-      
-      <h2>About Us</h2>
-      <div class="about-us">
-            <p>
-            Home Design English is your one-stop platform
-           for discovering and exploring all major home design and
-            improvement brands in one place. We bring together a wide range of
-            categories, making it easy for users to access and navigate through
-            various home design solutions effortlessly. Whether you're looking for
-            inspiration, products, or expert advice, our platform connects you
-            with the best resources—all in one convenient location.
-          </p>
-      </div>
-     
-  
-
-    <section id="contact" class="content-section">
+    <!-- Contact Section -->
+    <section id="contact">
       <h2>Contact Us</h2>
-           <p>Email: homedesignenglish@gmail.com</p>
-          <p>Website: homedesignenglish.com</p>
-                </section>
+      <p>
+        If you have any questions or feedback, feel free to reach out. Email us
+        at <a href="mailto:contact@hde.com">contact@hde.com</a>.
+      </p>
+    </section>
 
-  
+    <!-- FAQ Section -->
+    <section id="faq">
       <h2>Frequently Asked Questions</h2>
- 
-        <div class="faq-item"></div>
-        <!-- Add more FAQ items as needed -->
-       <h3>
-        1. What is Home Design English?
-        </h3>
-        <p>
-          Home Design English is a platform that brings together various home design and improvement brands in one place, making it easy for users to explore and access different resources.
-        </p>
-        <h3>
-          2. How does Home Design English work?
-        </h3>
-        <p>
-          We provide links to multiple brands and categories related to home design and improvements, allowing users to browse and find inspiration effortlessly.
-        </p>
-        <h3>
-          3. Is Home Design English free to use?
-        </h3>
-        <p>
-          Yes, our platform is completely free to explore and use.
-       </h3>
-       <h3>
-        4. Can I purchase products directly from Home Design English?
-       </h3>
-       <p>No, we do not sell products directly. We connect you with various brands where you can find and purchase what you need.</p>
-       <h3>5. How can I find specific home design categories?</h3>
-       <p>You can easily navigate through our categorized links, which help you find home design inspirations, products, and services quickly.</p>
-     
-      <h2>Our Policy</h2>
-    
-        <h3>1. Information Usage</h3>
-        <p>Home Design English is a platform that provides links to various home design and improvement brands. We do not collect, store, or share personal user data.</p>
-        <h3>2. Third-Party Links</h3>
-        <p>Our website contains links to third-party websites. We are not responsible for the content, privacy policies, or practices of these external sites. Users should review the policies of those websites before engaging with them.</p>
-        <h3>3. Accuracy of Information</h3>
-        <p>We strive to provide up-to-date and accurate information, but we do not guarantee the completeness or reliability of external content.</p>
-        <h3>4. User Responsibility</h3>
-        <p>Users are responsible for their interactions with third-party websites. Home Design English does not handle transactions, returns, or customer support for any external brands.</p>
-        <h3>5. Policy Updates</h3>
-        <p>We may update this policy periodically. Continued use of our platform means acceptance of any changes.</p>
-     
+      <p>
+        <strong>Q: How do I use the visualization tools?</strong><br />
+        <strong>A:</strong> Simply click on the visualization tool card you’re
+        interested in and follow the on‑screen instructions.
+      </p>
+      <p>
+        <strong>Q: Are these tools free to use?</strong><br />
+        <strong>A:</strong> Yes, all our visualization tools are available free
+        of charge.
+      </p>
+      <p>
+        <strong>Q: Can I save or share my designs?</strong><br />
+        <strong>A:</strong> You can preview your designs online and save
+        screenshots for later reference.
+      </p>
+    </section>
+
+    <!-- Policy Section -->
+    <section id="policy">
+      <h2>Privacy Policy</h2>
+      <p>
+        Your privacy is important to us. HDE does not store any of your uploaded
+        images or personal data. All processing is done locally in your browser
+        or through secure, temporary sessions. We adhere to strict data
+        protection guidelines to ensure your information remains safe.
+      </p>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section id="disclaimer">
       <h2>Disclaimer</h2>
-         <h3>1. General Information</h3>
-        <p>Home Design English is an informational platform that provides links to various home design and improvement brands. We do not own, sell, or endorse any specific products or services.</p>
-        <h3>2. Third-Party Links</h3>
-        <p>Our website contains links to third-party websites for user convenience. We are not responsible for the content, availability, or accuracy of these external sites. Visiting and using third-party websites is at the user’s own risk.</p>
-        <h3>3. No Liability</h3>
-        <p>We are not liable for any transactions, purchases, or interactions made through third-party websites. Users should verify all details before making any commitments.</p>
-        <h3>4. Content Accuracy</h3>
-        <p>While we strive to provide accurate and updated information, we do not guarantee completeness, reliability, or timeliness. Information may change without notice.</p>
-        <h3>5. Use at Your Own Risk</h3>
-        <p>By using Home Design English, users agree that they do so at their own risk. We are not responsible for any losses, damages, or issues arising from the use of our platform or external links.</p>
-      
- 
-    <!-- Footer Start -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Home Design English</h3>
-          <p>Your one-stop resource for all home improvement needs. Transform your space with expert guidance and quality products.</p>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Contact Info</h3>
-          <ul>
-            <li>Email: homedesignenglish@gmail.com</li>
-                   
-          </ul>
-        </div>
-               
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 Home Design English. All rights reserved.</p>
-      </div>
+      <p>
+        The visualization tools provided on this website are intended for
+        informational and design preview purposes only. HDE does not guarantee
+        the accuracy or suitability of the visualizations for real‑world
+        applications and is not responsible for any design outcomes.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 HDE. All rights reserved.</p>
+      <p>
+        <a href="#contact">Contact</a> | <a href="#faq">FAQ</a> |
+        <a href="#policy">Policy</a> | <a href="#disclaimer">Disclaimer</a>
+      </p>
     </footer>
-     <!-- Footer End -->
-    <script src="./script.js"></script>
+
+    <!-- JavaScript for Dropdown and Mobile Menu Toggle -->
+    <script>
+      // Toggle the Visualization Tools dropdown menu
+      document
+        .getElementById("toolsDropdown")
+        .addEventListener("click", function (event) {
+          event.stopPropagation();
+          const dropdown = document.getElementById("dropdownContent");
+          dropdown.style.display =
+            dropdown.style.display === "block" ? "none" : "block";
+        });
+      // Close dropdown if clicking outside
+      document.addEventListener("click", function () {
+        const dropdown = document.getElementById("dropdownContent");
+        if (dropdown.style.display === "block") {
+          dropdown.style.display = "none";
+        }
+      });
+      // Mobile menu toggle
+      document
+        .getElementById("menuToggle")
+        .addEventListener("click", function () {
+          const navMenu = document.querySelector(".nav-menu");
+          navMenu.classList.toggle("active");
+          const hamburger = this.querySelector(".hamburger");
+          const closeIcon = this.querySelector(".close-icon");
+          if (navMenu.classList.contains("active")) {
+            hamburger.style.display = "none";
+            closeIcon.style.display = "inline";
+          } else {
+            hamburger.style.display = "inline";
+            closeIcon.style.display = "none";
+          }
+        });
+    </script>
   </body>
 </html>

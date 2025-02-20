@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kitchen Paint</title>
+    <style>
+      /* Reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #121212;
+        color: #e0e0e0;
+        line-height: 1.6;
+      }
+      /* Back Button */
+      .back-button-container {
+        padding: 1rem;
+      }
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #333;
+        border: 1px solid #444;
+        border-radius: 0.375rem;
+        color: #e0e0e0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
+      .back-button:hover {
+        background-color: #444;
+      }
+      /* Layout */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: center;
+      }
+      .visualization-area {
+        position: relative;
+        max-width: 1200px;
+        width: 100%;
+      }
+      /* Base image always behind overlays */
+      #baseImage {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+      }
+      /* Overlays placed on top with blending mode */
+      .color-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Ensures overlay covers the base image */
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        mix-blend-mode: multiply;
+      }
+      .color-selection {
+        max-width: 400px;
+        width: 100%;
+        background: #1e1e1e;
+        padding: 1rem;
+        border: 1px solid #333;
+        border-radius: 8px;
+      }
+      .color-selection h4 {
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+      .color-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+      }
+      .color-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50px;
+      }
+      .color-button {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 5%;
+        cursor: pointer;
+        outline: none;
+        transition: transform 0.2s ease;
+      }
+      .color-button.active {
+        transform: scale(1.2);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
+      .reset-button {
+        background-color: #333;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        display: block;
+        margin: 0.5rem auto;
+        color: #e0e0e0;
+      }
+      .reset-button:hover {
+        background-color: #444;
+      }
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      @media (max-width: 1024px) {
+        .color-selection {
+          max-width: 800px;
+          width: 100%;
+          background: #1e1e1e;
+          padding: 1rem;
+          border: 1px solid #333;
+          border-radius: 8px;
+        }
+      }
+      @media (max-width: 1366px) {
+        .color-selection {
+          max-width: 1200px;
+          width: 100%;
+          background: #1e1e1e;
+          padding: 1rem;
+          border: 1px solid #333;
+          border-radius: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Visualization Area -->
+      <div class="visualization-area">
+        <!-- Updated the base image source to include a filename (e.g., base.jpg) -->
+        <img src="./images-kitchen/base.jpg" alt="Base" id="baseImage" />
+        <!-- Overlay images will be appended here dynamically -->
+      </div>
+
+      <!-- Color Selection Area -->
+      <div class="color-selection">
+        <h4>Paint Color</h4>
+        <div class="color-options">
+          <!-- Color buttons will be appended here dynamically -->
+        </div>
+        <button class="reset-button" id="resetButton">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Color Definitions
+        const colors = {
+          "001": "rgb(213,210,101)",
+          "002": "rgb(183,51,82)",
+          "003": "rgb(74,89,166)",
+          "004": "rgb(23,139,126)",
+          "005": "rgb(230,173,93)",
+          "006": "rgb(107,190,193)",
+          "007": "rgb(198,99,99)",
+          "008": "rgb(176,115,223)",
+          "009": "rgb(136,167,101)",
+          "010": "rgb(112,154,191)",
+          "011": "rgb(255,153,51)",
+          "012": "rgb(155,75,75)",
+          "013": "rgb(0,107,60)",
+          "014": "rgb(212,175,55)",
+          "015": "rgb(128,0,128)",
+          "016": "rgb(197,179,88)",
+          "017": "rgb(46,139,87)",
+          "018": "rgb(205,92,92)",
+          "019": "rgb(75,0,130)",
+          "020": "rgb(139,69,19)",
+        };
+
+        // 2. Helper Function: Pad Number (for file naming consistency if needed)
+        function padNumber(n) {
+          if (n < 10) return "00" + n;
+          else if (n < 100) return "0" + n;
+          else return n.toString();
+        }
+
+        // 3. Create UI Elements: Overlay images and Color Buttons
+        function createColorUI() {
+          const visualizationArea = document.querySelector(
+            ".visualization-area"
+          );
+          const colorOptionsContainer =
+            document.querySelector(".color-options");
+
+          Object.keys(colors)
+            .sort()
+            .forEach((key) => {
+              // Create overlay image element
+              const overlayImg = document.createElement("img");
+              // Updated file path to use the "images-kitchen" folder
+              overlayImg.src = `./images-kitchen/${key}.jpg`;
+              overlayImg.alt = "Overlay";
+              overlayImg.className = "color-overlay";
+              overlayImg.id = `${key}-overlay`;
+              visualizationArea.appendChild(overlayImg);
+
+              // Create color button element
+              const colorItem = document.createElement("div");
+              colorItem.className = "color-item";
+              const button = document.createElement("button");
+              button.className = "color-button";
+              button.dataset.color = key;
+              button.style.backgroundColor = colors[key];
+              button.setAttribute("aria-label", "Color");
+              colorItem.appendChild(button);
+              colorOptionsContainer.appendChild(colorItem);
+            });
+        }
+
+        // 4. Color Selection Functionality
+        let currentColor = null;
+        function selectColor(colorId) {
+          const colorOverlays = document.querySelectorAll(".color-overlay");
+          const colorButtons = document.querySelectorAll(".color-button");
+
+          // Hide all overlays and remove active classes
+          colorOverlays.forEach((overlay) => (overlay.style.opacity = "0"));
+          colorButtons.forEach((btn) => btn.classList.remove("active"));
+
+          // If a new color is selected, show its overlay and highlight its button.
+          if (colorId && colorId !== currentColor) {
+            const overlay = document.getElementById(`${colorId}-overlay`);
+            const button = document.querySelector(`[data-color="${colorId}"]`);
+            if (overlay) overlay.style.opacity = "1";
+            if (button) button.classList.add("active");
+            currentColor = colorId;
+          } else {
+            currentColor = null;
+          }
+        }
+
+        // 5. Initialize the Paint Visualizer: Create UI and Attach Event Listeners
+        function initializePaintVisualizer() {
+          createColorUI();
+
+          const colorButtons = document.querySelectorAll(".color-button");
+          colorButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const colorId = button.dataset.color;
+              selectColor(currentColor === colorId ? null : colorId);
+            });
+          });
+
+          const resetButton = document.getElementById("resetButton");
+          resetButton.addEventListener("click", () => {
+            selectColor(null);
+          });
+        }
+
+        // 6. Execute Initialization
+        initializePaintVisualizer();
+      });
+    </script>
+  </body>
+</html>
