@@ -155,7 +155,7 @@
     <div class="container">
       <!-- Visualization Area -->
       <div class="visualization-area">
-        <img src="./images/base.jpg" alt="Base" id="baseImage" />
+        <img src="./images-livingroom/base.jpg" alt="Base" id="baseImage" />
         <!-- Overlay images will be appended here dynamically -->
       </div>
 
@@ -215,7 +215,7 @@
             .forEach((key) => {
               // Create overlay image element
               const overlayImg = document.createElement("img");
-              overlayImg.src = `./images/${key}.jpg`;
+              overlayImg.src = `./images-livingroom/${key}.jpg`;
               overlayImg.alt = "Overlay";
               overlayImg.className = "color-overlay";
               overlayImg.id = `${key}-overlay`;
